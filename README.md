@@ -9,18 +9,28 @@ Objetivo: Criar uma aplicação React que encontre o melhor petshop com base na 
 Front-end:
 
 Tecnologia: Utiliza React para construir a interface do usuário.
+
 Funcionalidades:
 Entrada de Dados: Campos para o usuário inserir a data, quantidade de cães pequenos e grandes.
+
 Validação: Verifica se a data inserida é válida.
+
 Cálculo: Determina o dia da semana a partir da data inserida.
+
 Busca: Calcula o custo total para diferentes petshops e seleciona o melhor com base no custo e distância.
+
 Exibição: Mostra o melhor petshop, o valor total e o dia da semana para o usuário.
+
 Back-end:
 
 Dados: Define preços e distâncias para diferentes petshops.
+
 Funções:
+
 Calcular Custo: Calcula o custo total com base no tipo de dia (semana ou fim de semana) e na quantidade de cães.
+
 Encontrar o Melhor Petshop: Compara os petshops e escolhe o que oferece o menor custo total, considerando também a distância.
+
 Hospedagem:
 
 Plataforma: Replit.
