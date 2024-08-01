@@ -24,6 +24,7 @@ Encontrar o Melhor Petshop: Compara os petshops e escolhe o que oferece o menor 
 Hospedagem:
 
 Plataforma: Replit.
+
 Acesso: A aplicação está disponível publicamente no link fornecido, sem necessidade de criar conta.
 
 
