@@ -27,10 +27,10 @@ function App() {
 
     return true;
   };
-
+// Função para calcular o dia da semana a partir da data inserida
   const calcularDiaJuliano = (dataStr) => {
     const [dia, mes, ano] = dataStr.split('/').map(Number);
-
+// Ajusta o ano e mês para o cálculo
     let anoCorrigido = ano;
     let mesCorrigido = mes;
 
@@ -38,20 +38,20 @@ function App() {
       anoCorrigido -= 1;
       mesCorrigido += 12;
     }
-
+// Faz correção do calendário gregoriano
     let C;
     if (new Date(`${ano}-${mes}-${dia}`) >= new Date('1582-10-15')) {
       C = 2 - Math.floor(anoCorrigido / 100) + Math.floor(Math.floor(anoCorrigido / 100) / 4);
     } else {
       C = 0;
     }
-
+ // Cálculo do dia juliano
     const D = Math.floor(365.25 * (anoCorrigido + 4716));
     const E = Math.floor(30.6001 * (mesCorrigido + 1));
 
     const diaJuliano = D + E + dia + C - 1524;
     const restoDivisao = diaJuliano % 7;
-
+// Retorna o dia da semana correspondente
     switch (restoDivisao) {
       case 0: return 'segunda-feira';
       case 1: return 'terça-feira';
@@ -63,21 +63,21 @@ function App() {
       default: return '';
     }
   };
-
+// Função para encontrar o melhor petshop com base nas informações fornecidas 
   const handleEncontrarMelhorPetShop = () => {
-    if (!validarData(data)) {
+    if (!validarData(data)) { // Verifica se a data é válida
       setErro('Data inválida. Por favor, insira uma data válida no formato DD/MM/AAAA.');
       return;
     }
 
-    setErro('');
-    const dia = calcularDiaJuliano(data);
+    setErro('');// Limpa a mensagem de erro
+    const dia = calcularDiaJuliano(data);// Calcula o dia da semana a partir da data
     const diaDaSemana = (dia === 'sábado' || dia === 'domingo') ? 'fim_de_semana' : 'dia_de_semana';
 
-    setDiaDaSemana(dia);
+    setDiaDaSemana(dia);// Define o dia da semana
 
     const resultado = encontrarMelhorPetShop(cãesPequenos, cãesGrandes, diaDaSemana);
-    setMelhorPetShop(resultado);
+    setMelhorPetShop(resultado);// Define o melhor petshop
   };
 
   return (
